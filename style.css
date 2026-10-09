@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    width: 100%;
+    height: 5em;
+    background-image: url(nav.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: rgb(17, 128, 179) ;
+    font-size: clamp(2rem, 3vw , 1em);
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0fdfa, #9de1fe);
+}
+
+
+.maincard{
+    margin: 8em auto;
+
+    background-image: url(todo.jpeg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: clamp(15em,40em ,100%);
+    min-height: 40rem;
+
+    border: none;
+    border-radius: 15px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    padding: min(2em, 5%);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    gap: 5em;
+
+    position: relative;
+    overflow: hidden;
+}
+.maincard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("todo.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(4px);
+
+    transform: scale(1.05);
+
+    z-index: 0;
+}
+
+.inp{
+    padding: min(8px, 6%);
+    width: 20em;
+    padding-left: 4px ;
+    border: 2px solid white;
+    border-radius: 6px;
+    background: rgba(141, 194, 255, 0.85);
+    color: #164e63;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size:clamp(14px, 16px, 20px) ;
+
+    position: relative;
+    z-index: 1;
+
+    cursor: pointer;
+}
+.inp::placeholder{
+    color: rgb(255, 254, 254);
+    font-size:clamp(14px, 16px, 20px) ;
+}
+.inp:hover{
+    border: 2px solid #aee5f9;
+}
+.inp:focus{
+    outline: none;
+    border: 2px solid #03a6e1;
+}
+.inp::selection{
+    background-color: rgba(71, 152, 245, 0.85);
+}
+.btn{
+    color: rgb(250, 249, 249);
+    font-weight: 600;
+    padding: clamp(10px, 8%, 2px);
+
+    background: rgba(0, 153, 255, 0.537);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 6px;
+    margin-top: 4px;
+
+    position: relative;
+    z-index: 1;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out ;
+}
+.btn:hover{
+    transform: scale(1.06);
+
+    background: rgba(250, 251, 252, 0.505);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    color: black;
+}
+#view-btn{
+    background: rgba(0, 153, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    width: 25rem;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 6px 8px;
+    margin-bottom: 4px;
+
+    font-weight: 600;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+#view-btn:hover{
+    transform: scale(1.06);
+
+    background: rgba(250, 251, 252, 0.505);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    color: rgb(7, 7, 7);
+    
+}
+img{
+    width: 16px;
+}
+.addcard{
+    width: min(28em, 90%);
+}
+#notask{
+    color: black;
+    position: relative;
+    z-index: 1;
+
+    font-weight: 400;
+    font-size: 16px;
+}
+.sercard{
+    width: min(28em, 90%);
+}
+#sdis{
+    color: black;
+    position: relative;
+    top: 3px;
+    z-index: 1;
+
+    font-weight: 400;
+    font-size: 16px;
+}
+.tasklist{
+    width: min(28rem, 95%);
+    min-height: 10%;
+    
+    position: relative;
+    z-index: 1;
+    
+
+}
+
+.tasklist .taskname{
+    background-color: rgba(222, 233, 238, 0.78);
+    color: black;
+
+    font-size: 18px;
+    font-weight: 400;
+    
+    margin: 10px;
+    padding: 6px 10px;
+    height: 30px;
+    
+
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    padding-right: 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete-btn{
+    background: none;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 25px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+div .taskname .delete-btn:hover{
+    
+    transform: scale(1.25);
+}
+.btn-holder{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-right: -10px;
+
+}
+.edit-btn{
+    background: none;
+    width: 4rem;
+    font-size: 18px;
+
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+    padding: clamp(10px, 8%, 2px);
+
+    font-weight: 600;
+}
+.edit-btn:hover{
+    transform: scale(1.26);
+}
+
+
+#cancel-btn{
+    background-color: rgba(222, 233, 238, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 18px;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin-bottom: 20px;
+
+    color: black;
+    width: 25px;
+
+    border: none;
+    border-radius: 10px ;
+    cursor: pointer;
+}
+#cancel-btn:hover{
+    background-color: rgba(222, 224, 225, 0.663);
+}
+
+
+.h4{
+    font-size: clamp(1.2em, 2vw, 1.6em);
+}
+
+
+@media screen and (max-width: 780px) {
+    .maincard{
+        width: 90%;
+    }
+    .inp{
+        width: min(22em, 95%);
+    }
+    .btn{
+        font-size: 12px;
+    }
+    #view-btn{
+        font-size: 12px;
+        width: min(27rem, 95%);
+    }
+    
+}
+@media screen and (max-width:480px) {
+    .maincard{
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0px;
+        margin: 0;
+        min-height: 60vh;
+    }
+    h1{
+        font-size: 22px;
+    }
+    .inp{
+        width: 90%;
+    }
+    .btn{
+        font-size: 10px;
+        width: 95%;
+    }
+    #viwe-btn{
+        font-size: 10px;
+        
+    }
+}
+@media screen and (max-width:320px) {
+    h1{
+        font-size: 18px;
+    }
+    .inp{
+        width: 92%;
+    }
+    .btn{
+        width: 100%;
+    }
+    
+}

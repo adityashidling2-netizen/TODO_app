@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list app </title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body id="bd">
+    <nav>
+        <h1>TO DO</h1>
+    </nav>
+    <main>
+        <div class="maincard">
+            <div class="sercard">
+                <input type="text" placeholder="Search tasks..." class="inp" id="serinp" onkeydown="enter(event)">
+                <button class="btn" id="ser-btn" onclick="sertask()">ENTER</button>
+                <h4 class="h4" id="sdis"></h4>
+                
+            </div>
+            
+            <div class="tasklist" id="listtasks">
+                <button id="cancel-btn" >x</button>
+                
+            </div>
+
+            <div class="addcard">
+                <button id="view-btn" onclick="show_task()"><img src="view.png" alt="eye" > ViewAll task</button>
+                <input type="text" id="inpbox" placeholder="Add tasks..." class="inp" onkeydown="enter_task(event)">
+                <button class="btn" id="entertask" onclick="taskinput()"> ENTER </button>
+                <h4 class="h4" id="notask"></h4>               
+            </div>
+            
+        </div>
+    </main>
+    <script src="todo.js"></script>
+</body>
+
+</html>
